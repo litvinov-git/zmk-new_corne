@@ -5,7 +5,9 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors/runtime-sensor-rotate.dtsi>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 &soft_off { hold-time-ms = <2000>; };
@@ -55,28 +57,30 @@
 
         CTRL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &kp PG_UP  &kp UP      &kp PG_DN  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN    &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &kp BSPC   &kp INSERT  &kp DEL    &trans  &trans
-                        &trans  &trans  &trans                                    &trans  &trans     &trans
+&trans  &trans  &trans  &kp LS(LBRC)  &kp LS(RBRC)  &trans                        &trans          &trans  &kp PG_UP  &kp UP      &kp PG_DN  &trans  &trans
+&trans  &trans  &trans  &kp LS(LPAR)  &kp LS(RPAR)  &trans                &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN    &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &kp LBKT      &kp RBKT      &trans  &kp C_MUTE            &trans          &trans  &kp BSPC   &kp INSERT  &kp DEL    &trans  &trans
+                        &trans        &trans        &trans                                        &trans  &trans     &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         SYMB {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                                    &trans  &trans  &trans
+&trans  &kp FSLH      &kp LS(QMARK)  &kp LS(UNDER)  &kp MINUS     &trans                           &trans          &trans         &kp EQUAL     &kp LS(PLUS)  &kp LS(PIPE)   &kp BSLH   &trans
+&trans  &kp N1        &kp N2         &kp N3         &kp N4        &kp N5                   &trans  &trans  &trans  &kp N6         &kp N7        &kp N8        &kp N9         &kp N0     &trans
+&trans  &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &trans            &trans          &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(TILDE)  &kp GRAVE  &trans
+                                     &trans         &trans        &trans                                           &trans         &trans        &trans
             >;
         };
 
         SYST {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                                    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                        &out OUT_BLE              &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &bt BT_PRV  &bt BT_CLR    &bt BT_NXT  &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                &out OUT_USB              &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans
+                        &trans  &trans  &trans                                                  &trans  &trans  &trans
             >;
         };
     };
