@@ -68,10 +68,10 @@
 
         SYMB {
             bindings = <
-&trans  &kp FSLH      &kp LS(QMARK)  &kp LS(UNDER)  &kp MINUS     &trans                           &trans          &trans         &kp EQUAL     &kp LS(PLUS)  &kp LS(PIPE)   &kp BSLH   &trans
-&trans  &kp N1        &kp N2         &kp N3         &kp N4        &kp N5                   &trans  &trans  &trans  &kp N6         &kp N7        &kp N8        &kp N9         &kp N0     &trans
-&trans  &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &trans            &trans          &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(TILDE)  &kp GRAVE  &trans
-                                     &trans         &trans        &trans                                           &trans         &trans        &trans
+&trans  &kp FSLH      &kp LS(QMARK)  &kp MINUS      &kp LS(UNDER)  &kp LESS_THAN                    &trans          &kp GREATER_THAN  &kp EQUAL     &kp LS(PLUS)  &kp LS(PIPE)   &kp BSLH   &trans
+&trans  &kp N1        &kp N2         &kp N3         &kp N4         &kp N5                   &trans  &trans  &trans  &kp N6            &kp N7        &kp N8        &kp N9         &kp N0     &trans
+&trans  &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &kp LS(DLLR)   &kp LS(PRCNT)  &trans            &trans          &kp LS(CARET)     &kp LS(AMPS)  &kp LS(STAR)  &kp LS(TILDE)  &kp GRAVE  &trans
+                                     &trans         &trans         &trans                                           &trans            &trans        &trans
             >;
         };
 
